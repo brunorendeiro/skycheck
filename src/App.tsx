@@ -186,7 +186,8 @@ export default function App() {
         <div className="forecast-grid">
           {forecast.daily.map((day, index) => {
             const info = getWeatherInfo(day.weatherCode, locale)
-            const label = index === 0 ? t.todayLabel : new Intl.DateTimeFormat(bcp47[locale], { weekday: 'short' }).format(new Date(day.date))
+            const [y, m, d] = day.date.split('-').map(Number)
+            const label = index === 0 ? t.todayLabel : new Intl.DateTimeFormat(bcp47[locale], { weekday: 'short' }).format(new Date(y, m - 1, d))
             return <div className="forecast-day" key={day.date}>
               <span className="day-label">{label}</span>
               <span className="day-icon">{info.icon}</span>
@@ -197,6 +198,10 @@ export default function App() {
       </section>}
     </main>
 
-    <footer>{t.footerTagline}</footer>
+    <footer>
+      <span>{t.footerTagline}</span>
+      <a href="https://vibe-portfolio-one.vercel.app/" target="_blank" rel="noreferrer">Created by Bruno Rendeiro</a>
+      <span className="powered-badge">⚡ Powered by AI</span>
+    </footer>
   </div>
 }

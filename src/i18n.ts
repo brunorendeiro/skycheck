@@ -6,9 +6,6 @@ export const locales: { id: Locale; label: string }[] = [
   { id: 'de', label: 'DE' },
 ]
 
-// Idioma para pedir à API de geocoding (nomes de lugares traduzidos quando disponível).
-export const apiLocale: Record<Locale, string> = { pt: 'pt', en: 'en', de: 'de' }
-
 export function detectLocale(): Locale {
   const stored = window.localStorage.getItem('skycheck-locale')
   if (stored === 'pt' || stored === 'en' || stored === 'de') return stored
