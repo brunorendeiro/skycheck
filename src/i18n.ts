@@ -40,6 +40,9 @@ type UiStrings = {
   emptyTitle: string
   emptyBody: string
   footerTagline: string
+  cookieBody: string
+  cookieAccept: string
+  cookieReject: string
 }
 
 export const ui: Record<Locale, UiStrings> = {
@@ -68,6 +71,9 @@ export const ui: Record<Locale, UiStrings> = {
     emptyTitle: 'Ainda sem localização escolhida.',
     emptyBody: 'Procura uma cidade ou usa a tua localização para começar.',
     footerTagline: 'Dados de open-meteo.com · sem contas · sem chaves de API',
+    cookieBody: 'Uso o Google Analytics para perceber quantas pessoas visitam este projeto. Aceitas cookies analíticos?',
+    cookieAccept: 'Aceitar',
+    cookieReject: 'Recusar',
   },
   en: {
     brandTagline: 'The weather, anywhere',
@@ -94,6 +100,9 @@ export const ui: Record<Locale, UiStrings> = {
     emptyTitle: 'No location picked yet.',
     emptyBody: 'Search a city or use your location to get started.',
     footerTagline: 'Data from open-meteo.com · no accounts · no API keys',
+    cookieBody: 'I use Google Analytics to understand how many people visit this project. Do you accept analytics cookies?',
+    cookieAccept: 'Accept',
+    cookieReject: 'Reject',
   },
   de: {
     brandTagline: 'Das Wetter, überall',
@@ -120,5 +129,8 @@ export const ui: Record<Locale, UiStrings> = {
     emptyTitle: 'Noch kein Standort ausgewählt.',
     emptyBody: 'Suche eine Stadt oder nutze deinen Standort, um loszulegen.',
     footerTagline: 'Daten von open-meteo.com · keine Konten · keine API-Schlüssel',
+    cookieBody: 'Ich verwende Google Analytics, um zu verstehen, wie viele Menschen dieses Projekt besuchen. Akzeptierst du Analyse-Cookies?',
+    cookieAccept: 'Akzeptieren',
+    cookieReject: 'Ablehnen',
   },
 }

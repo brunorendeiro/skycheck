@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react'
 import { fetchForecast, searchPlaces, type Forecast, type GeoResult } from './lib/openMeteo'
 import { getWeatherInfo } from './data/weatherCodes'
 import { detectLocale, locales, ui, type Locale } from './i18n'
+import { getStoredConsent, loadAnalytics } from './analytics'
+import CookieConsent from './CookieConsent'
 
 type Unit = 'c' | 'f'
 type Place = { name: string; country?: string; admin1?: string; latitude: number; longitude: number; isCurrentLocation?: boolean }
@@ -45,6 +47,10 @@ export default function App() {
     window.localStorage.setItem('skycheck-locale', locale)
     document.documentElement.setAttribute('lang', locale)
   }, [locale])
+
+  useEffect(() => {
+    if (getStoredConsent() === 'granted') loadAnalytics()
+  }, [])
 
   useEffect(() => {
     window.localStorage.setItem('skycheck-recent', JSON.stringify(recent))
@@ -203,5 +209,6 @@ export default function App() {
       <a href="https://vibe-portfolio-one.vercel.app/" target="_blank" rel="noreferrer">Created by Bruno Rendeiro</a>
       <span className="powered-badge">⚡ Powered by AI</span>
     </footer>
+    <CookieConsent locale={locale} />
   </div>
 }
