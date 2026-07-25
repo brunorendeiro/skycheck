@@ -43,6 +43,15 @@ type UiStrings = {
   cookieBody: string
   cookieAccept: string
   cookieReject: string
+  noteHot: string
+  noteWarm: string
+  noteMild: string
+  noteCool: string
+  noteCold: string
+  noteRain: string
+  noteSnow: string
+  noteStorm: string
+  noteFog: string
 }
 
 export const ui: Record<Locale, UiStrings> = {
@@ -74,6 +83,15 @@ export const ui: Record<Locale, UiStrings> = {
     cookieBody: 'Uso o Google Analytics para perceber quantas pessoas visitam este projeto. Aceitas cookies analíticos?',
     cookieAccept: 'Aceitar',
     cookieReject: 'Recusar',
+    noteHot: 'Calor a sério — hidrata-te e procura sombra.',
+    noteWarm: 'Ótimo dia para andar lá fora.',
+    noteMild: 'Está agradável, sem grandes cuidados.',
+    noteCool: 'Leva um casaco leve.',
+    noteCold: 'Agasalha-te bem, está mesmo frio.',
+    noteRain: 'Não esqueças o guarda-chuva.',
+    noteSnow: 'Está a nevar — calça as botas.',
+    noteStorm: 'Trovoada aí fora, talvez fiques em casa.',
+    noteFog: 'Nevoeiro lá fora — conduz devagar.',
   },
   en: {
     brandTagline: 'The weather, anywhere',
@@ -103,6 +121,15 @@ export const ui: Record<Locale, UiStrings> = {
     cookieBody: 'I use Google Analytics to understand how many people visit this project. Do you accept analytics cookies?',
     cookieAccept: 'Accept',
     cookieReject: 'Reject',
+    noteHot: 'Scorcher — hydrate and find some shade.',
+    noteWarm: 'Great day to be outside.',
+    noteMild: 'Comfortable out there, no fuss needed.',
+    noteCool: 'Grab a light jacket.',
+    noteCold: "Bundle up, it's properly cold.",
+    noteRain: "Don't forget the umbrella.",
+    noteSnow: "Snow's falling — boots on.",
+    noteStorm: "Thunder's rolling, maybe stay in.",
+    noteFog: 'Foggy out there — drive slow.',
   },
   de: {
     brandTagline: 'Das Wetter, überall',
@@ -132,5 +159,14 @@ export const ui: Record<Locale, UiStrings> = {
     cookieBody: 'Ich verwende Google Analytics, um zu verstehen, wie viele Menschen dieses Projekt besuchen. Akzeptierst du Analyse-Cookies?',
     cookieAccept: 'Akzeptieren',
     cookieReject: 'Ablehnen',
+    noteHot: 'Richtig heiß — trink genug und such dir Schatten.',
+    noteWarm: 'Perfekter Tag, um draußen zu sein.',
+    noteMild: 'Angenehm draußen, kein Aufwand nötig.',
+    noteCool: 'Nimm eine leichte Jacke mit.',
+    noteCold: 'Warm anziehen, es ist richtig kalt.',
+    noteRain: 'Schirm nicht vergessen.',
+    noteSnow: 'Es schneit — Stiefel an.',
+    noteStorm: 'Gewitter zieht auf, bleib lieber drinnen.',
+    noteFog: 'Nebel draußen — fahr vorsichtig.',
   },
 }

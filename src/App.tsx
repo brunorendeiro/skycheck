@@ -27,6 +27,23 @@ function placeLabel(place: Place): string {
   return parts.join(', ')
 }
 
+const STORM_CODES = new Set([95, 96, 99])
+const SNOW_CODES = new Set([71, 73, 75, 77, 85, 86])
+const FOG_CODES = new Set([45, 48])
+const RAIN_CODES = new Set([51, 53, 55, 56, 57, 61, 63, 65, 66, 67, 80, 81, 82])
+
+function noteKeyFor(weatherCode: number, celsius: number) {
+  if (STORM_CODES.has(weatherCode)) return 'noteStorm' as const
+  if (SNOW_CODES.has(weatherCode)) return 'noteSnow' as const
+  if (FOG_CODES.has(weatherCode)) return 'noteFog' as const
+  if (RAIN_CODES.has(weatherCode)) return 'noteRain' as const
+  if (celsius >= 30) return 'noteHot' as const
+  if (celsius >= 22) return 'noteWarm' as const
+  if (celsius >= 14) return 'noteMild' as const
+  if (celsius >= 6) return 'noteCool' as const
+  return 'noteCold' as const
+}
+
 export default function App() {
   const [locale, setLocale] = useState<Locale>(() => detectLocale())
   const [unit, setUnit] = useState<Unit>('c')
@@ -182,6 +199,7 @@ export default function App() {
           <span className="current-temp">{toDisplayTemp(forecast.current.temperature, unit)}°</span>
           <span className="current-label">{currentInfo.label}</span>
         </div>
+        <p className="human-note">{t[noteKeyFor(forecast.current.weatherCode, forecast.current.temperature)]}</p>
         <div className="detail-row">
           <div className="detail"><span>{t.feelsLike}</span><strong>{toDisplayTemp(forecast.current.feelsLike, unit)}°</strong></div>
           <div className="detail"><span>{t.humidity}</span><strong>{Math.round(forecast.current.humidity)}%</strong></div>
