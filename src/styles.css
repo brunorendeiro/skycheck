@@ -34,7 +34,7 @@ button { cursor: pointer; }
 .app-shell { max-width: 720px; margin: 0 auto; padding: 28px 20px 60px; position: relative; }
 
 header { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; padding-bottom: 20px; border-bottom: 2px dashed var(--rule); }
-.brand { display: flex; align-items: center; gap: 14px; }
+.brand { display: flex; align-items: center; gap: 14px; margin: 0; }
 .brand-mark {
   display: grid; place-items: center; width: 50px; height: 50px;
   border: 2.5px dashed var(--ink);

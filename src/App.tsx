@@ -136,7 +136,7 @@ export default function App() {
 
   return <div className="app-shell">
     <header>
-      <div className="brand"><span className="brand-mark">☀️</span><div><strong>SkyCheck</strong><small>{t.brandTagline}</small></div></div>
+      <h1 className="brand"><span className="brand-mark">☀️</span><div><strong>SkyCheck</strong><small>{t.brandTagline}</small></div></h1>
       <div className="header-actions">
         <div className="unit-switch" role="group" aria-label={t.unitLabel}>
           <button className={unit === 'c' ? 'active' : ''} onClick={() => setUnit('c')}>°C</button>
