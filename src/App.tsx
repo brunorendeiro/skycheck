@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { fetchForecast, searchPlaces, type Forecast, type GeoResult } from './lib/openMeteo'
 import { getWeatherInfo } from './data/weatherCodes'
 import { detectLocale, locales, ui, type Locale } from './i18n'
-import { getStoredConsent, loadAnalytics } from './analytics'
+import { getStoredConsent, loadAnalytics, loadAds } from './analytics'
 import CookieConsent from './CookieConsent'
 
 type Unit = 'c' | 'f'
@@ -66,7 +66,10 @@ export default function App() {
   }, [locale])
 
   useEffect(() => {
-    if (getStoredConsent() === 'granted') loadAnalytics()
+    if (getStoredConsent() === 'granted') {
+      loadAnalytics()
+      loadAds()
+    }
   }, [])
 
   useEffect(() => {
